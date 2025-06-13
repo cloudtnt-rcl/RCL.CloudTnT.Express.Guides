@@ -2,10 +2,11 @@
 title: DID
 description: A Decentralized Identifier (DID) is used to uniquely identify a holder or issuer.
 has_children: false
-nav_order: 1
+nav_order: 2
 ---
 
 # Decentralized Identifier (DID)
+**V1.0**
 
 A Decentralized Identifier (DID) is used to uniquely identity the holder and issuer of a digital credential. The DID complies with the [W3C Specification for Decentralized Identifiers](https://www.w3.org/TR/did-1.1/).
 
@@ -62,7 +63,7 @@ w7/aabORnrkSVL5B+Zy+1WGtSRH6StZb+HTN7g8jfqWDvifRccmEs3DVRzcNk2F7
 -----END RSA PRIVATE KEY-----
 ```
 
-Using the did:jwk method, the public key is embedded in the DID. The DID is formatted as a ``.txt`` document. If you open the text document on a computer you will see something similar to this:
+Using the did:jwk method, the public key is embedded in the DID. The DID is formatted as a ``.txt`` file. If you open the text file on a computer you will see something similar to this:
 
 ## Sample DID using the did:jwk Method
 
@@ -98,7 +99,7 @@ Computer systems that can read the DID will **resolve** the DID into a **DID Doc
 }
 ```
 
-You can see the public key in the DID document inside the ``publicKeyJwk`` parameter. The public key is fomatted as a (JSON Web Key (JWK))(https://datatracker.ietf.org/doc/html/rfc7517). The JWK extracted frm the DID document is shown below:
+You can see the public key in the DID document inside the ``publicKeyJwk`` parameter. The public key is fomatted as a [JSON Web Key (JWK)](https://datatracker.ietf.org/doc/html/rfc7517). The JWK extracted from the DID document is shown below:
 
 ## Sample Public Key as a JSON Web Key (JWK)
 
@@ -110,7 +111,7 @@ You can see the public key in the DID document inside the ``publicKeyJwk`` param
 }
 ```
 
-# Publicy Distibuting your Public Key
+# Distibuting your Public Key
 
 When you provide your DID to a computer, the computer system would be able to resolve the DID and extract your public key from it. The computer can then use your public key to verify your digital signature when you sign a digital file with your private key.
 
