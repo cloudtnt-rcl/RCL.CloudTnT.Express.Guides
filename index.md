@@ -12,7 +12,7 @@ These guidance documents are targeted at holders, issuers and application hoster
 
 # What are Digital Credentials
 
-Digital credentials are issued to holders do demonstrate their achievements. They are machine-readable and are secured by cryptographic methods. They are shareable and portable as they can be interchanged among computer systems.
+Digital credentials are issued to holders who demonstrate their achievements. They are machine-readable and are secured by cryptographic methods. They are shareable and portable as they can be interchanged among computer systems.
 
 # Roles in the Digital Credentials Eco-System
 

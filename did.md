@@ -111,7 +111,7 @@ You can see the public key in the DID document inside the ``publicKeyJwk`` param
 }
 ```
 
-# Distibuting your Public Key
+# Distibuting a Public Key
 
 When you provide your DID to a computer, the computer system would be able to resolve the DID and extract your public key from it. The computer can then use your public key to verify your digital signature when you sign a digital file with your private key.
 
