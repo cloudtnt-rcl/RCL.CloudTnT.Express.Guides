@@ -8,7 +8,7 @@ nav_order: 1
 # Introduction
 **V1.0**
 
-These guidance documents are for holders and issuers who use the Credentials Web Wallet and the Credentials Issuer applications.
+These guidance documents are targeted to holders and issuers who use the Credentials Web Wallet and the Credentials Issuer applications to manage digital credentials.
 
 # What are Digital Credentials
 
@@ -26,7 +26,7 @@ A holder is a person that receives a digital credential for their achievement.
 
 ## Verifier
 
-A holder will share their digital credentials with verifiers to check the validity and make a determination on the holder's achievement. Holders can include employers.
+A holder will share their digital credentials with verifiers to check their validity and make a determination on the holder's achievement. Verifiers can include employers.
 
 # Specifications
 
@@ -36,7 +36,7 @@ The [W3C Specification for Verifiable Credentials](https://www.w3.org/TR/vc-over
 
 ## Open Badges 3.0 (OBs)
 
-The [Open Badges 3.0](https://www.imsglobal.org/spec/ob/v3p0) is aligned to the W3C Specification for Verifiable Credentials and provides a data model and interchangeability mechanism for digital credentials.
+The [Open Badges 3.0](https://www.imsglobal.org/spec/ob/v3p0) is aligned to the W3C Specification for Verifiable Credentials and provides a data model and interchangeability mechanisms for digital credentials among computer systems.
 
 ## W3C Decentralized Identifiers (DIDs)
 
