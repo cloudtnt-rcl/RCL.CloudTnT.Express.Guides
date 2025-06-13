@@ -79,7 +79,7 @@ A digital credential contains data related to the credential itself, issuer of t
 
 ## JWT
 
-A Digital Credential is issued by an issuer. The credential is issued in the format of a [JSON Web Token](https://datatracker.ietf.org/doc/html/rfc7519). Conceptually, the JWT contains the following sections :
+A Digital Credential is issued by an issuer. The credential is issued in the format of a [JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519). Conceptually, the JWT contains the following sections :
 
 ```bash
 [header].[payload].[signature]
