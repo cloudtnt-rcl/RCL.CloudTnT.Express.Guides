@@ -31,10 +31,10 @@ A digital credential has data related to the credential itself, issuer of the cr
 | @context         | List of strings   | Yes      | 
 | id               | string            | Yes      |
 | type             | List of strings   | Yes      |
-| issuer           | Profile           | Yes      |
+| issuer           | [Profile](./credential.md#profile)           | Yes      |
 | validFrom        | string            | Yes      |
 | validUntil       | string            | Yes      |
-| credentialSubject| AchievementSubject| Yes      |
+| credentialSubject| [AchievementSubject](./credential.md#achievementcredential)| Yes      |
 | iss              | string            | Optional |
 | jti              | string            | Optional |
 | sub              | string            | Optional |
@@ -53,7 +53,7 @@ A digital credential has data related to the credential itself, issuer of the cr
 | -----------------| ------------------|----------|
 | id               | string            | Yes      |
 | type             | List of strings   | Yes      |
-| achievement      | Achievement       | Yes      |
+| achievement      | [Achievement](./credential.md#achievement)       | Yes      |
 | name             | string            | Optional |
 | image            | string            | Optional |
 
@@ -65,7 +65,7 @@ A digital credential has data related to the credential itself, issuer of the cr
 | type             | List of strings   | Yes      |
 | name             | string            | Yes      |
 | description      | string            | Yes      |
-| criteria         | Criteria          | Yes      |
+| criteria         | [Criteria](./credential.md#criteria)          | Yes      |
 
 ## Criteria
 
