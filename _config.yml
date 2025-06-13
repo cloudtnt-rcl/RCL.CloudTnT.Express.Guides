@@ -3,7 +3,7 @@ remote_theme: pmarsceill/just-the-docs
 color_scheme: "dark"
 search_enabled: true
 aux_links:
-  "Guides on GitHub":
+  "Edit on GitHub":
     - "https://github.com/cloudtnt-rcl/RCL.CloudTnT.Express.Guides"
 callouts:
   information:
