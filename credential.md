@@ -22,7 +22,7 @@ The [Open Badges 3.0](https://www.imsglobal.org/spec/ob/v3p0) specification is a
 
 # Data Model
 
-A digital credential has data related to the credential itself, issuer of the credential and the holder of the credential. The data model is shown below.
+A digital credential contains data related to the credential itself, issuer of the credential and the holder of the credential. The data model is shown below:
 
 ## AchievementCredential
 
@@ -34,7 +34,7 @@ A digital credential has data related to the credential itself, issuer of the cr
 | issuer           | [Profile](./credential.md#profile)           | Yes      |
 | validFrom        | string            | Yes      |
 | validUntil       | string            | Yes      |
-| credentialSubject| [AchievementSubject](./credential.md#achievementcredential)| Yes      |
+| credentialSubject| [AchievementSubject](./credential.md#achievementsubject)| Yes      |
 | iss              | string            | Optional |
 | jti              | string            | Optional |
 | sub              | string            | Optional |
@@ -85,15 +85,15 @@ A Digital Credential is issued by an issuer. The credential is issued in the for
 [header].[payload].[signature]
 ```
 
-The payload for the JWT, will comprise the credential containing the data following the model shown above and appropriately encoded.
+The **payload** for the JWT, will comprise the credential containing the data following the model shown above and appropriately encoded.
 
-The JWT must be digitally signed by the issuer using the issuer's private key. The signature is included in the JWT.
+The JWT must be digitally signed by the issuer using the issuer's private key. The **signature** is included in the JWT.
 
-The cryptographic algorithm used to sign the JWT is specified in the header and encoded appropriately. In addition, the issuers public key must be included in the header as a [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517). The application identified in these guides do not support a key id, ``kid`` , and requires that the public key be included in the header.
+The cryptographic algorithm used to sign the JWT is specified in the **header** and appropriately encoded. In addition, the issuers public key must be included in the header as a [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517). The application identified in these guides do not support a key id, ``kid`` , and requires that the actual public key be included in the header.
 
 ## Format of a JWT
 
-The digital credential is issued as a ``.jwt`` file. This file can be opened with a text editor application, such as notepad. The content will look something like this:
+The digital credential is issued as a ``.jwt`` file. This file can be opened with a text editor application, such as notepad. The content of the file will look something like this:
 
 ```bash
 eyJqd2siOnsia3R5IjoiUlNBIiwibiI6IjluYjBrcmRXTVIwQUhYc3Y4dnc3Mm8zb3RmQkNEX2NLZ3p1cmNRc3hGMnJiUnNheVZiV0Vlb3BGSDkzckNyZUdOelIyQUFrTERvZklmdkFNWkdsVjluVmUyMjF0UnJhODVPb1BHUmVYUFpodmlUNlhqV0NrR2NzeVNWWGRza19fdkdVTXhhdG9hTTNQNUNXMkQwMWxiUnNUQ1VtRDBudDNNZlNZUDZJM1ZxbklUOXhlUmgwaWRiUEFxZFJELUlXSDQzRzBIbEdCTHlnN0IzX055UXNmNW9kb1JFNm9DcGdPbHVUd25IekpqbVdPNUc1RlphSHZxZmV3WHl4Sm5oVmJhS1NwUWxqVFBadUl2UDBES19xb1dYeDBTWFJOLW5iblJMbWhuUDVEMDNJWXp0dUdSeEVTN3Y3T3RuZGNiUjlDS2ljWkYzSXVHaDktM3UyUXR2OVJTUSIsImUiOiJBUUFCIn0sImFsZyI6IlJTMjU2IiwidHlwIjoiSldUIn0.eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvbnMvY3JlZGVudGlhbHMvdjIiLCJodHRwczovL3B1cmwuaW1zZ2xvYmFsLm9yZy9zcGVjL29iL3YzcDAvY29udGV4dC0zLjAuMy5qc29uIl0sImlkIjoiYzc5ZTgyNzJjODY5NGRiNGFmMzZkZmExNDMwZTI2NDAiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiT3BlbkJhZGdlQ3JlZGVudGlhbCJdLCJpc3N1ZXIiOnsiaWQiOiJkaWQ6andrOmV5SnJkSGtpT2lKU1UwRWlMQ0p1SWpvaU9XNWlNR3R5WkZkTlVqQkJTRmh6ZGpoMmR6Y3liek52ZEdaQ1EwUmZZMHRuZW5WeVkxRnplRVl5Y21KU2MyRjVWbUpYUldWdmNFWklPVE55UTNKbFIwNTZVakpCUVd0TVJHOW1TV1oyUVUxYVIyeFdPVzVXWlRJeU1YUlNjbUU0TlU5dlVFZFNaVmhRV21oMmFWUTJXR3BYUTJ0SFkzTjVVMVpZWkhOclgxOTJSMVZOZUdGMGIyRk5NMUExUTFjeVJEQXhiR0pTYzFSRFZXMUVNRzUwTTAxbVUxbFFOa2t6Vm5GdVNWUTVlR1ZTYURCcFpHSlFRWEZrVWtRdFNWZElORE5ITUVoc1IwSk1lV2MzUWpOZlRubFJjMlkxYjJSdlVrVTJiME53WjA5c2RWUjNia2g2U21wdFYwODFSelZHV21GSWRuRm1aWGRZZVhoS2JtaFdZbUZMVTNCUmJHcFVVRnAxU1haUU1FUkxYM0Z2VjFoNE1GTllVazR0Ym1KdVVreHRhRzVRTlVRd00wbFplblIxUjFKNFJWTTNkamRQZEc1a1kySlNPVU5MYVdOYVJqTkpkVWRvT1MwemRUSlJkSFk1VWxOUklpd2laU0k2SWtGUlFVSWlmUSIsInR5cGUiOlsiUHJvZmlsZSJdLCJuYW1lIjoiUmF5IENvbnN1bHRpbmcgTGltaXRlZCJ9LCJ2YWxpZEZyb20iOiIyMDI1LTA2LTEzVDAwOjAwOjAwWiIsInZhbGlkVW50aWwiOiIyMDUwLTA2LTEzVDAwOjAwOjAwWiIsImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImlkIjoiZGlkOmp3azpleUpyZEhraU9pSlNVMEVpTENKdUlqb2ljSFZZYjNWUlMxVmhhMnQyWDJKVVpXUTRka05ZTFU5RlRHMWpVemhxUTIxRFdFOVdaRnAyYjNsNWMwd3hUV015TVdaR1N6QnhNWEJJTjFkTVJVMWhPVUZoZDFoUVNrMXNja2RFZG1jeFQwRmlTMWgwVGtNd1oyaEhNVFIyZHpWcVFYcGllbGRzYjNGM2MyNWphR2xRUms1RU5XdDZhVE5mVW1OcFl6bHhabHBHVW5OM2FVZGpVa050UkhOS1VubHFYMjQ0TURoVlprTkdka1JuWVZaelZqbE5OVkpoTW1OWk1IbFlRa0pETTI5dFJrcEpOWEJrVEVFeVNURkZSRlp1TVdKa1R6RmFSWFF0VUZZM1ozYzBNV0ZRWkhkaE56ZDJjVEJOUmtGRGFUTnlTMHd0VEVkeldrTnhZbG8xUTBac05qSkZNV05ZTVU1S1ptZDFkM0JvTURKSE1FZFJTalpJTW5oQlNGZG5VM0JrVlV0WGNUTlFkWEpyV1ZsM1ZHa3dURkpYUjAxNU1rNXNTemR3VlV4UE1sRndlbTFHTjJ0V1JtZGhiVzVmYjBWT01GbGhWa294YlZnelZFMDJVRVZIVnpaRmRERlJJaXdpWlNJNklrRlJRVUlpZlEiLCJ0eXBlIjpbIkFjaGlldmVtZW50U3ViamVjdCJdLCJhY2hpZXZlbWVudCI6eyJpZCI6ImI3MjFhMjJkNjI1MjQzMWM4YzVkYjQyZDhmYmNiMGE4IiwidHlwZSI6WyJBY2hpZXZlbWVudCJdLCJuYW1lIjoiU2FtcGxlIFZlcmlmaWFibGUgQ3JlZGVudGlhbCIsImRlc2NyaXB0aW9uIjoiVGhpcyBpcyBhIHNhbXBsZSB2ZXJpZmllZCBjcmVkZW50aWFsIGlzc3VlZCB0byBhIGhvbGRlci4iLCJjcml0ZXJpYSI6eyJuYXJyYXRpdmUiOiJUaGUgaG9sZGVyIHdpbGwgcmVjZWl2ZSB0aGUgc2FtcGxlIGNyZWRlbnRpYWwgd2hlbiB0aGUgc3VjY2Vzc2Z1bGx5IHVzZSB0aGUgd2ViIHdhbGxldCBhcHBsaWNhdGlvbi4ifX0sIm5hbWUiOiJBbmlsIFJpcGxhIn0sImlzcyI6ImRpZDpqd2s6ZXlKcmRIa2lPaUpTVTBFaUxDSnVJam9pT1c1aU1HdHlaRmROVWpCQlNGaHpkamgyZHpjeWJ6TnZkR1pDUTBSZlkwdG5lblZ5WTFGemVFWXljbUpTYzJGNVZtSlhSV1Z2Y0VaSU9UTnlRM0psUjA1NlVqSkJRV3RNUkc5bVNXWjJRVTFhUjJ4V09XNVdaVEl5TVhSU2NtRTROVTl2VUVkU1pWaFFXbWgyYVZRMldHcFhRMnRIWTNONVUxWllaSE5yWDE5MlIxVk5lR0YwYjJGTk0xQTFRMWN5UkRBeGJHSlNjMVJEVlcxRU1HNTBNMDFtVTFsUU5ra3pWbkZ1U1ZRNWVHVlNhREJwWkdKUVFYRmtVa1F0U1ZkSU5ETkhNRWhzUjBKTWVXYzNRak5mVG5sUmMyWTFiMlJ2VWtVMmIwTndaMDlzZFZSM2JraDZTbXB0VjA4MVJ6VkdXbUZJZG5GbVpYZFllWGhLYm1oV1ltRkxVM0JSYkdwVVVGcDFTWFpRTUVSTFgzRnZWMWg0TUZOWVVrNHRibUp1VWt4dGFHNVFOVVF3TTBsWmVuUjFSMUo0UlZNM2RqZFBkRzVrWTJKU09VTkxhV05hUmpOSmRVZG9PUzB6ZFRKUmRIWTVVbE5SSWl3aVpTSTZJa0ZSUVVJaWZRIiwianRpIjoiYzc5ZTgyNzJjODY5NGRiNGFmMzZkZmExNDMwZTI2NDAiLCJzdWIiOiJkaWQ6andrOmV5SnJkSGtpT2lKU1UwRWlMQ0p1SWpvaWNIVlliM1ZSUzFWaGEydDJYMkpVWldRNGRrTllMVTlGVEcxalV6aHFRMjFEV0U5V1pGcDJiM2w1YzB3eFRXTXlNV1pHU3pCeE1YQklOMWRNUlUxaE9VRmhkMWhRU2sxc2NrZEVkbWN4VDBGaVMxaDBUa013WjJoSE1UUjJkelZxUVhwaWVsZHNiM0YzYzI1amFHbFFSazVFTld0NmFUTmZVbU5wWXpseFpscEdVbk4zYVVkalVrTnRSSE5LVW5scVgyNDRNRGhWWmtOR2RrUm5ZVlp6VmpsTk5WSmhNbU5aTUhsWVFrSkRNMjl0UmtwSk5YQmtURUV5U1RGRlJGWnVNV0prVHpGYVJYUXRVRlkzWjNjME1XRlFaSGRoTnpkMmNUQk5Sa0ZEYVROeVMwd3RURWR6V2tOeFlsbzFRMFpzTmpKRk1XTllNVTVLWm1kMWQzQm9NREpITUVkUlNqWklNbmhCU0ZkblUzQmtWVXRYY1ROUWRYSnJXVmwzVkdrd1RGSlhSMDE1TWs1c1N6ZHdWVXhQTWxGd2VtMUdOMnRXUm1kaGJXNWZiMFZPTUZsaFZrb3hiVmd6VkUwMlVFVkhWelpGZERGUklpd2laU0k2SWtGUlFVSWlmUSJ9.2NT-u81MN5nmIeMNohnJnL7pVkLm2rB2YpV3njJFCTNBP0_PQNls8S6l4QJElfBMCZZ1cJUx11OaOQenHeNVAD5EGTQ9VRCv3b5WahdQYZRiQj-E6z4C2azz0OGn_xVL6Zz_-yTvElUszYnySgUwcVDjCmLvQAvm52c5mEtbQN_-toL4FbLTVaSzGcWHHUXMj7L1WdhUcJH-NSQU0leOpkwGJ5WttiXH7dh1wc3RJoLLpSqmrD1yWOsSlLGdv7bvDcHxOyyPXozB9AoWSkTPNTX1z055HTCEgDVR8Xa_0Prp-rRivDW4r7L5ytIShYrOQLdg7Zn-nB_bh8pGvv4F_w
@@ -197,7 +197,7 @@ A holder will download his/her credential from the credential issuance platform 
 
 Where available, a holder may automatically send the credential to a wallet using the credentials ``API``. The hoster of the issuer application must configure the application to use the API.
 
-A user must upload their DID is the wallet application store before they can upload a credential. The holder's DID included in the credential must match their DID in the wallet store for it to be accepted by the wallet.
+A user must upload their DID in the wallet application's DID store before they can upload a credential. The holder's DID included in the credential must match their DID in the wallet store for it to be accepted by the wallet.
 
 # Sharing a Digital Credential
 
