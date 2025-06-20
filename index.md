@@ -50,7 +50,7 @@ The [W3C Decentralized Identifier](https://www.w3.org/TR/did-1.1/) is a specific
 
 ## Credentials Web Wallet
 
-The web wallet is an web application used by holders to store and share their digital credentials with verifiers.
+The web wallet is a web application used by holders to store and share their digital credentials with verifiers.
 
 ## Use Cases
 
