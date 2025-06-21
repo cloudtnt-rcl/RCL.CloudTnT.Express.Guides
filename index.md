@@ -104,4 +104,4 @@ Individual experts in occupational areas can use the application to issue creden
 
 ### Training Providers and Apprenticeships
 
-Trining and apprenticeship providers can use the application to issue credentials to their learners and apprentices.
+Training and apprenticeship providers can use the application to issue credentials to their learners and apprentices.
