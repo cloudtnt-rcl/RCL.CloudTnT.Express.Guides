@@ -1,30 +1,30 @@
 ---
-title: Credential
-description: Digital credentials are issued to holders do demonstrate their achievements. They are machine-readable and are secured by cryptographic methods.
+title: Digital Credentials
+description: Digital credentials are issued to holders who demonstrate their achievements and skills. They are machine-readable and are secured by cryptographic methods.
 has_children: false
 nav_order: 3
 ---
 
-# Digital Credential
+# Digital Credentials
 **V1.0**
 
-Digital credentials are issued to holders who demonstrate their achievements. They are machine-readable and are secured by cryptographic methods. They are shareable and portable as they can be interchanged among computer systems.
+Digital credentials are issued to holders who demonstrate their achievements and skills. They are machine-readable and are secured by cryptographic methods making them difficult to copy or forge. They are shareable and portable as they can be interchanged among computer systems thus ensuring they are recognised by different sofware applications and platforms. 
 
 # Specifications
 
 ## W3C Verifiable Credentials (VCs)
 
-The [W3C Specification for Verifiable Credentials](https://www.w3.org/TR/vc-overview) outlines the technical specification that the digital credentials must comply with.
+The [W3C Specification for Verifiable Credentials](https://www.w3.org/TR/vc-overview) outlines the technical specification that the digital credentials must comply with. This will ensure that digital credentials are secure and genuine.
 
 ## Open Badges 3.0 (OBs)
 
-The [Open Badges 3.0](https://www.imsglobal.org/spec/ob/v3p0) specification is aligned to the W3C Specification for Verifiable Credentials and provides a data model and interchangeability mechanisms for digital credentials among computer systems.
+The [Open Badges 3.0](https://www.imsglobal.org/spec/ob/v3p0) specification is aligned to the W3C Specification for Verifiable Credentials and provides a data model and interchangeability mechanisms for digital credentials among computer systems. This will ensure the Digital Badges, which is a type of Digital Credential, are highly secure and verified across different software applications and platforms.
 
 # Data Model
 
-A digital credential contains data related to the credential itself, issuer of the credential and the holder of the credential. The data model is shown below:
+A digital credential contains data related to the credential itself, the issuer of the credential and the holder of the credential. The data model is shown below:
 
-## AchievementCredential
+## Achievement Credential
 
 | Property         | Type              | Required |
 | -----------------| ------------------|----------|
@@ -47,7 +47,7 @@ A digital credential contains data related to the credential itself, issuer of t
 | type             | List of strings   | Yes      |
 | name             | string            | Yes      |
 
-## AchievementSubject
+## Achievement Subject
 
 | Property         | Type              | Required |
 | -----------------| ------------------|----------|
@@ -79,7 +79,7 @@ A digital credential contains data related to the credential itself, issuer of t
 
 ## JWT
 
-A Digital Credential is issued by an issuer. The credential is issued in the format of a [JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519). Conceptually, the JWT contains the following sections :
+The JSON Web Token (JWT) is a standard that oulines the format for the digital credential to ensure verification and autentication of the digital credential. A Digital Credential is issued by an issuer. The credential is issued in the format of a [JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519). Conceptually, the JWT contains the following sections :
 
 ```bash
 [header].[payload].[signature]
@@ -103,7 +103,7 @@ The **header**, **payload** and **signature** sections of the JWT are shown abov
 
 ## JWT Decoded
 
-The JWT can de decoded using online tools such as [jwt.io](https://jwt.io/). Just paste the JWT in the application's text box and view the decoded digital credential.
+The JWT can de decoded using online tools such as [jwt.io](https://jwt.io/). Just paste the JWT in the application's text box and view the decoded digital credential. An authentic JWT will be recognised as valid. An incorrect or tampered JWT will not be decoded and will be recognised as invalid. 
 
 ### JWT Header Decoded
 
@@ -193,7 +193,7 @@ The JWT signature is shown below:
 
 # Storing a Digital Credential
 
-A holder will download his/her credential from the credential issuance platform as a ``.jwt`` file. The holder will then upload and store the credential in the wallet applications.
+A holder will download his/her digital credential from the credential issuance platform as a ``.jwt`` file. The holder will then upload and store the credential in the wallet applications.
 
 Where available, a holder may automatically send the credential to a wallet using the credentials ``API``. The hoster of the issuer application must configure the application to use the API.
 
@@ -201,6 +201,6 @@ A user must upload their DID in the wallet application's DID store before they c
 
 # Sharing a Digital Credential
 
-In the wallet applications, a holder can share their credentials with verifiers.
+In the wallet applications, a holder can share their credentials with verifiers such as employers, trainers
 
 
