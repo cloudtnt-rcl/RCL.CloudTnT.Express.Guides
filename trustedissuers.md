@@ -8,7 +8,7 @@ nav_order: 5
 # Trusted Issuers
 **V1.0**
 
-A hoster of a wallet application will maintain a curated list of Trusted Issuers. Holders will on by able to store credentials in the wallet issued by one of these Trusted Issuers.
+A hoster of a wallet application will maintain a curated list of Trusted Issuers. Holders will be able to store credentials in the wallet issued by one of these Trusted Issuers.
 
 The hoster may choose an Issuer based on any of the following :
 
