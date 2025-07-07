@@ -20,4 +20,4 @@ When credentials are organized withing groups, it makes the sharing experience b
 
 A holder can share their credentials with one or more verifiers. Verifiers may include employers, peers, trainers, etc. The verifier must login to the wallet application to view a holders's credentials.
 
-A holder can select which verifier should see their credential information, in addition, the holder can remove verifier sharing at any time.
+A holder can select which verifier should see their credential information and in addition, the holder can remove verifier sharing at any time.

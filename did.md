@@ -8,7 +8,7 @@ nav_order: 2
 # Decentralized Identifier (DID)
 **V1.0**
 
-A Decentralized Identifier (DID) is used to uniquely identity the holder and issuer of a digital credential. The DID complies with the [W3C Specification for Decentralized Identifiers](https://www.w3.org/TR/did-1.1/).
+A Decentralized Identifier (DID) is used to uniquely identity the holder and issuer of a digital credential. The DID complies with the [W3C Specification for Decentralized Identifiers](https://www.w3.org/TR/did-1.1/) to ensure confidentiality and security of the holder's and issuer's digital identity.
 
 # What is a DID
 
@@ -71,7 +71,7 @@ Using the did:jwk method, the public key is embedded in the DID. The DID is form
 did:jwk:eyJrdHkiOiJSU0EiLCJuIjoiOW5iMGtyZFdNUjBBSFhzdjh2dzcybzNvdGZCQ0RfY0tnenVyY1FzeEYycmJSc2F5VmJXRWVvcEZIOTNyQ3JlR056UjJBQWtMRG9mSWZ2QU1aR2xWOW5WZTIyMXRScmE4NU9vUEdSZVhQWmh2aVQ2WGpXQ2tHY3N5U1ZYZHNrX192R1VNeGF0b2FNM1A1Q1cyRDAxbGJSc1RDVW1EMG50M01mU1lQNkkzVnFuSVQ5eGVSaDBpZGJQQXFkUkQtSVdINDNHMEhsR0JMeWc3QjNfTnlRc2Y1b2RvUkU2b0NwZ09sdVR3bkh6SmptV081RzVGWmFIdnFmZXdYeXhKbmhWYmFLU3BRbGpUUFp1SXZQMERLX3FvV1h4MFNYUk4tbmJuUkxtaG5QNUQwM0lZenR1R1J4RVM3djdPdG5kY2JSOUNLaWNaRjNJdUdoOS0zdTJRdHY5UlNRIiwiZSI6IkFRQUIifQ
 ```
 
-Computer systems that can read the DID will **resolve** the DID into a **DID Document**. You can use the [Universal Resolver]() provided by the [Decentralized Identity Foundation (DIF)](https://identity.foundation/) to resolve a DID. Just copy the DID into the ``did-url`` textbox and click the ``Resolve`` button. The DID will be resolved into a DID document in ``json`` format that looks something like this:
+Computer systems that can read the DID will **resolve** the DID into a **DID Document**. You can use the [Universal Resolver](https://dev.uniresolver.io/) provided by the [Decentralized Identity Foundation (DIF)](https://identity.foundation/) to resolve a DID. Just copy the DID into the ``did-url`` textbox and click the ``Resolve`` button. The DID will be resolved into a DID document in ``json`` format that looks something like this:
 
 ## Sample DID Document using the did:jwk Method
 
@@ -126,6 +126,6 @@ An issuer will use their private key to digitally sign a digital credential that
 A holder of a credential will add their DID into a wallet application. Before they can add the DID, they must supply their private key to demonstrate that they own the DID. The wallet application will verify that the public key contained in the DID matches the correspondent private key supplied by the holder. If the keys match, the the wallet application will accept the holder's DID into the store. 
 
 {: .warning }
-A wallet application should not copy, share or store the holder's private key in any form. It should only use the private key to verify the holder's DID. The holder's private should only be controlled by and stored by the holder using the holder's choice of storage.
+A wallet application will not copy, share or store the holder's private key in any form. It will only use the private key to verify the holder's DID. The holder's private key will only be controlled by and stored by the holder using the holder's choice of storage.
 
 A credential will contain the DID of the issuer, as well as, the DID of the holder. A holder will only be able to store a credential in their wallet if the holder's DID in the credential matches the holder's DID in the wallet's DID store.  
