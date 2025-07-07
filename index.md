@@ -36,7 +36,7 @@ An application hoster is an individual, organization or government agency that h
 
 ## W3C Verifiable Credentials (VCs)
 
-The [W3C Specification for Verifiable Credentials](https://www.w3.org/TR/vc-overview) outlines the technical specification that the digital credentials must comply with. It is an internationally recognised specification that ensures the digital credentials are secure, easily shared, authentic and verifiable.
+The [W3C Specification for Verifiable Credentials](https://www.w3.org/TR/vc-overview) outlines the technical specification that the digital credentials must comply with. It is an internationally recognized specification that ensures the digital credentials are secure, easily shared, authentic and verifiable.
 
 ## Open Badges 3.0 (OBs)
 
