@@ -44,7 +44,7 @@ The [Open Badges 3.0](https://www.imsglobal.org/spec/ob/v3p0) specification is a
 
 ## W3C Decentralized Identifier (DID)
 
-The [W3C Decentralized Identifier](https://www.w3.org/TR/did-1.1/) is a specification to identify entities such as the holders and issuers of digital credentials. It providers the entities with a unique identification for greater security and validity.
+The [W3C Decentralized Identifier](https://www.w3.org/TR/did-1.1/) is a specification to identify entities such as the holders and issuers of digital credentials. It provides the entities with a unique identification for greater security and validity.
 
 # Applications
 

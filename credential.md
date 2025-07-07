@@ -24,7 +24,7 @@ The [Open Badges 3.0](https://www.imsglobal.org/spec/ob/v3p0) specification is a
 
 A digital credential contains data related to the credential itself, the issuer of the credential and the holder of the credential. The data model is shown below:
 
-## Achievement Credential
+## AchievementCredential
 
 | Property         | Type              | Required |
 | -----------------| ------------------|----------|
@@ -47,7 +47,7 @@ A digital credential contains data related to the credential itself, the issuer 
 | type             | List of strings   | Yes      |
 | name             | string            | Yes      |
 
-## Achievement Subject
+## AchievementSubject
 
 | Property         | Type              | Required |
 | -----------------| ------------------|----------|
@@ -201,6 +201,6 @@ A user must upload their DID in the wallet application's DID store before they c
 
 # Sharing a Digital Credential
 
-In the wallet applications, a holder can share their credentials with verifiers such as employers, trainers
+In the wallet applications, a holder can share their credentials with verifiers such as employers and trainers.
 
 
