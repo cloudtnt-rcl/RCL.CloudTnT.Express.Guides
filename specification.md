@@ -15,7 +15,7 @@ nav_order: 6
 
 ## 1.1 Issuer Application
 
-1.1.1 An Issuer application is used by Issuers to issue digital credentials to Holder following the requirements of the [W3C Verifiable Credentials](https://www.w3.org/TR/vc-data-model-2.0/) and [Open Badges 3](https://www.imsglobal.org/spec/ob/v3p0) requirements.
+1.1.1 An Issuer application is used by Issuers to issue digital credentials to Holders following the requirements of the [W3C Verifiable Credentials](https://www.w3.org/TR/vc-data-model-2.0/) and [Open Badges 3](https://www.imsglobal.org/spec/ob/v3p0) requirements.
 
 ## 1.2.1 Wallet Application
 
@@ -25,35 +25,35 @@ nav_order: 6
 
 ### 1.3.1 Issuer
 
-1.3.1.1 An Issuer issues digital credentials to Holders to recognize their achievement. Examples : training provider, organization, assessor.
+1.3.1.1 An Issuer issues digital credentials to Holders to recognize their achievement or skills. Examples : training provider, organization, assessor.
 
 ### 1.3.2 Holder
 
-1.3.2.1 A Holder earns a digital credential as a recognition of his/her achievement. Examples : student, apprentice, employee.
+1.3.2.1 A Holder earns a digital credential as a recognition of his/her achievement or skills. Examples : student, apprentice, employee.
 
 ### 1.3.3 Verifier
 
-1.3.3.1 A Holder will share their digital credential with a verifier who will make a determination on the validity of the credential. Example : employer. 
+1.3.3.1 A verifier will make a determination on the validity of the digital credential. The Holder will share their digital credential with a verifier . Example of a verifier: employer, training provider 
 
 ## 1.4 Decentralized Identifiers
 
 1.4.1 [W3C Decentralized Identifiers (DIDs)](https://www.w3.org/TR/did-1.1/) are used to uniquely identify Issuers and Holders.
 
-1.4.2 DIDs are created using the [did:jwk method](https://github.com/quartzjer/did-jwk/blob/main/spec.md). This is the ony method supported.
+1.4.2 DIDs are created using the [did:jwk method](https://github.com/quartzjer/did-jwk/blob/main/spec.md). This is the only DID method supported.
 
 1.4.3 When creating a did:jwk, the [RSA](https://datatracker.ietf.org/doc/html/rfc8017) cryptographic algorithm should be used with a 2048 bit key size. Only RSA asymmetric keys are supported. 
 
 1.4.4 A **DID document** will be generated from the did:jwk.
 
-1.4.5 The public key of the DID owner should be directly obtainable from the DID document as a [Json Web Key (JWK)](https://datatracker.ietf.org/doc/html/rfc7517). The JWK must iclude the public key parameters and should not reference the key from an external source such as a website.
+1.4.5 The public key of the DID owner should be directly obtainable from the DID document as a [JSON Web Key (JWK)](https://datatracker.ietf.org/doc/html/rfc7517). The JWK must include the public key parameters and should not reference the key from an external source such as a website.
 
 1.4.6 A ``kid`` will be ignored in a JWK. 
 
-1.4.7 A DID should be in the form of a text (.txt) file. Issuers and Holders should be allowed to download and save thier DID, as well as, the associated private key.
+1.4.7 A DID should be in the form of a text (.txt) file. Issuers and Holders should be allowed to download and save their DID, as well as, the associated private key.
 
-1.4.8 Where an Issuer application creates a DID for a Holder. the Holder should be able to download the DID and the asscoiated private key to add it to their DID store in a Wallet application.
+1.4.8 Where an Issuer application creates a DID for a Holder,the Holder should be able to download the DID and the associated private key to add it to their DID store in a Wallet application.
 
-1.4.9 Where an Issuer application does not create a DID for a Holder, the Issuer must request the DID from the Holder to create the Holder's credential. The Issuer must verify that the Holder owns the DID by performing a DID verification using the Holder's private key.
+1.4.9 Where an Issuer application does not create a DID for a Holder, the Issuer application must request the DID from the Holder to create the Holder's credential. The Issuer application must verify that the Holder owns the DID by performing a DID verification using the Holder's private key.
 
 ### Sample did:jwk
 
@@ -99,11 +99,11 @@ did:jwk:eyJrdHkiOiJSU0EiLCJuIjoicHVYb3VRS1Vha2t2X2JUZWQ4dkNYLU9FTG1jUzhqQ21DWE9W
 
 ## 1.5 Private Keys
 
-1.5.1 In an Issuer or Wallet application, the DID private key for the Holder should not be stored in a database or other storage system. The private should be controlled soley by the Holder. No external party should have access to the Holder's private key.
+1.5.1 In an Issuer or Wallet application, the DID private key for the Holder should not be stored in a database or other storage system. The private key should be controlled solely by the Holder. No external party should have access to the Holder's private key.
 
-1.5.2 When a Holder adds a DID to an Issuer or Wallet application, they must upload the DID as a text (.txt) file, as well as, use their private key to verify that they own the DID. The Wallet application should only use the private key to verify the DID and should not store the private key in the database.
+1.5.2 When a Holder adds a DID to an Issuer or Wallet application, they must upload the DID as a text (.txt) file, as well as, use their private key to verify that they own the DID. The application should only use the private key to verify the DID and should not store the private key in any database or other storage system.
 
-1.5.3 In the Issuer application, the DID private key for the Issuer can be stored in the application's database once the issuer has full and sole control of the Issuer application. No external party should have access to the Issuer's private key.
+1.5.3 In the Issuer application, the DID private key for the Issuer can be stored in the application's database or other storage system once the issuer has full and sole control of the Issuer application. No external party should have access to the Issuer's private key.
 
 1.5.4 Private key should be provided as ``.txt`` files that can be downloaded.
 
@@ -240,7 +240,7 @@ w7/aabORnrkSVL5B+Zy+1WGtSRH6StZb+HTN7g8jfqWDvifRccmEs3DVRzcNk2F7
 
 ## 1.7 Credential Format
 
-1.7.1 Credentials should be presented as a [Json Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519). Conceptually, the JWT contains the following sections :
+1.7.1 Credentials should be presented as a [JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519). Conceptually, the JWT contains the following sections :
 
 ```bash
 [header].[payload].[signature]
@@ -262,7 +262,7 @@ w7/aabORnrkSVL5B+Zy+1WGtSRH6StZb+HTN7g8jfqWDvifRccmEs3DVRzcNk2F7
 }
 ```
 
-1.7.3 The payload of the JWT should contain the Holder's credential.
+1.7.3 The payload of the JWT should contain the Holder's credentials and data.
 
 ### Example JWT decoded Payload
 
@@ -323,7 +323,7 @@ JWT token = Y + '.' + Base64URLEncode(RSASHA256(Y))
 
 1.7.7 Only ``.jwt`` files for credentials are supported by the Issuer and Wallet applications. An image file with an embedded JWT is not supported.
 
-### Example Crededential formatted as a JWT compact
+### Example Credential formatted as a JWT compact
 
 ```bash
 eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImp3ayI6eyJrdHkiOiJSU0EiLCJuIjoieElDZGFobElaNVplbngyeVI4VHJfOWdWSi1lcUVnODJnSnd6YUxXZGhId0NmSHFJY1hTbUJjV2w4akpNWWREbmpRdGdwam9FRDlPQk9sazhFZy1IU095QXVkc0FrcXpLcjNwRzIyWUVGY2NGZ0E2N1UzakxGbHQxcERoMmpzbzlYWkVLS1JrclYwS2ZTYmJVM1ZHS2hYOHZTVjB4WmNkZ2pHTEZfZGJJakh0WExDaFF4ZEl3MFU2dVVkODU3VGt6LXNyQVhISXkxeWNueGdMQWlucXkzTDhTZ01iSVZSdEJfZjFMYTNXVlkydVMyVjNUNGJwYkd5VVBRZmk3SkZmR2hqcG5BOTctR0IwZWgzMHoxbkJqZTZTdERGRk1abmJRUXlPWkljemVLS0JfdkNobjBOMGJOMVhtaGIzdER5Y1UxdFRMZEZaVDZLUDFRZVExMGc3OC1RIiwiZSI6IkFRQUIifX0.eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvbnMvY3JlZGVudGlhbHMvdjIiLCJodHRwczovL3B1cmwuaW1zZ2xvYmFsLm9yZy9zcGVjL29iL3YzcDAvY29udGV4dC0zLjAuMy5qc29uIl0sImlkIjoiYjA4ZDM0MGIyNGY2NGZlMmIxYTRiOGFmNmU5NDU4YmMiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiT3BlbkJhZGdlQ3JlZGVudGlhbCJdLCJpc3N1ZXIiOnsiaWQiOiJkaWQ6andrOmV5SnJkSGtpT2lKU1UwRWlMQ0p1SWpvaWVFbERaR0ZvYkVsYU5WcGxibmd5ZVZJNFZISmZPV2RXU2kxbGNVVm5PREpuU25kNllVeFhaR2hJZDBObVNIRkpZMWhUYlVKalYydzRha3BOV1dSRWJtcFJkR2R3YW05RlJEbFBRazlzYXpoRlp5MUlVMDk1UVhWa2MwRnJjWHBMY2pOd1J6SXlXVVZHWTJOR1owRTJOMVV6YWt4R2JIUXhjRVJvTW1wemJ6bFlXa1ZMUzFKcmNsWXdTMlpUWW1KVk0xWkhTMmhZT0haVFZqQjRXbU5rWjJwSFRFWmZaR0pKYWtoMFdFeERhRkY0WkVsM01GVTJkVlZrT0RVM1ZHdDZMWE55UVZoSVNYa3hlV051ZUdkTVFXbHVjWGt6VERoVFowMWlTVlpTZEVKZlpqRk1ZVE5YVmxreWRWTXlWak5VTkdKd1lrZDVWVkJSWm1rM1NrWm1SMmhxY0c1Qk9UY3RSMEl3Wldnek1Ib3hia0pxWlRaVGRFUkdSazFhYm1KUlVYbFBXa2xqZW1WTFMwSmZka05vYmpCT01HSk9NVmh0YUdJemRFUjVZMVV4ZEZSTVpFWmFWRFpMVURGUlpWRXhNR2MzT0MxUklpd2laU0k2SWtGUlFVSWlmUSIsInR5cGUiOlsiUHJvZmlsZSJdLCJuYW1lIjoiUmF5IENvbnN1bHRpbmcgTGltaXRlZCJ9LCJ2YWxpZEZyb20iOiIyMDI1LTA1LTE5VDAwOjAwOjAwWiIsInZhbGlkVW50aWwiOiIyMDMwLTA1LTE5VDAwOjAwOjAwWiIsImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImlkIjoiZGlkOmp3azpleUpyZEhraU9pSlNVMEVpTENKdUlqb2ljSFZZYjNWUlMxVmhhMnQyWDJKVVpXUTRka05ZTFU5RlRHMWpVemhxUTIxRFdFOVdaRnAyYjNsNWMwd3hUV015TVdaR1N6QnhNWEJJTjFkTVJVMWhPVUZoZDFoUVNrMXNja2RFZG1jeFQwRmlTMWgwVGtNd1oyaEhNVFIyZHpWcVFYcGllbGRzYjNGM2MyNWphR2xRUms1RU5XdDZhVE5mVW1OcFl6bHhabHBHVW5OM2FVZGpVa050UkhOS1VubHFYMjQ0TURoVlprTkdka1JuWVZaelZqbE5OVkpoTW1OWk1IbFlRa0pETTI5dFJrcEpOWEJrVEVFeVNURkZSRlp1TVdKa1R6RmFSWFF0VUZZM1ozYzBNV0ZRWkhkaE56ZDJjVEJOUmtGRGFUTnlTMHd0VEVkeldrTnhZbG8xUTBac05qSkZNV05ZTVU1S1ptZDFkM0JvTURKSE1FZFJTalpJTW5oQlNGZG5VM0JrVlV0WGNUTlFkWEpyV1ZsM1ZHa3dURkpYUjAxNU1rNXNTemR3VlV4UE1sRndlbTFHTjJ0V1JtZGhiVzVmYjBWT01GbGhWa294YlZnelZFMDJVRVZIVnpaRmRERlJJaXdpWlNJNklrRlJRVUlpZlEiLCJ0eXBlIjpbIkFjaGlldmVtZW50U3ViamVjdCJdLCJhY2hpZXZlbWVudCI6eyJpZCI6IjAxNTMwMTIwN2FhNzRmNWZhNTQ4YWM1NWJiODg0OTk2IiwidHlwZSI6WyJBY2hpZXZlbWVudCJdLCJuYW1lIjoiU2FtcGxlIFZlcmlmaWFibGUgQ3JlZGVudGlhbCIsImRlc2NyaXB0aW9uIjoiVGhpcyBjcmVkZW50aWFsIGlzIGFuIGV4YW1wbGUgb2YgYSBWZXJpZmlhYmxlIENyZWRlbnRpYWwuIiwiY3JpdGVyaWEiOnsibmFycmF0aXZlIjoiVG8gYWNoaWV2ZSB0aGlzIGNyZWRlbnRpYWwsIGEgdXNlciBjYW4gZG93bmxvYWQgdGhpcyBWZXJpZmlhYmxlIENyZWRlbnRpYWwgYW5kIHVzZSBpdCBmb3IgZGVtb25zdHJhdGlvbiBwdXJwb3Nlcy4ifX19LCJpc3MiOiJkaWQ6andrOmV5SnJkSGtpT2lKU1UwRWlMQ0p1SWpvaWVFbERaR0ZvYkVsYU5WcGxibmd5ZVZJNFZISmZPV2RXU2kxbGNVVm5PREpuU25kNllVeFhaR2hJZDBObVNIRkpZMWhUYlVKalYydzRha3BOV1dSRWJtcFJkR2R3YW05RlJEbFBRazlzYXpoRlp5MUlVMDk1UVhWa2MwRnJjWHBMY2pOd1J6SXlXVVZHWTJOR1owRTJOMVV6YWt4R2JIUXhjRVJvTW1wemJ6bFlXa1ZMUzFKcmNsWXdTMlpUWW1KVk0xWkhTMmhZT0haVFZqQjRXbU5rWjJwSFRFWmZaR0pKYWtoMFdFeERhRkY0WkVsM01GVTJkVlZrT0RVM1ZHdDZMWE55UVZoSVNYa3hlV051ZUdkTVFXbHVjWGt6VERoVFowMWlTVlpTZEVKZlpqRk1ZVE5YVmxreWRWTXlWak5VTkdKd1lrZDVWVkJSWm1rM1NrWm1SMmhxY0c1Qk9UY3RSMEl3Wldnek1Ib3hia0pxWlRaVGRFUkdSazFhYm1KUlVYbFBXa2xqZW1WTFMwSmZka05vYmpCT01HSk9NVmh0YUdJemRFUjVZMVV4ZEZSTVpFWmFWRFpMVURGUlpWRXhNR2MzT0MxUklpd2laU0k2SWtGUlFVSWlmUSIsImp0aSI6ImIwOGQzNDBiMjRmNjRmZTJiMWE0YjhhZjZlOTQ1OGJjIiwic3ViIjoiZGlkOmp3azpleUpyZEhraU9pSlNVMEVpTENKdUlqb2ljSFZZYjNWUlMxVmhhMnQyWDJKVVpXUTRka05ZTFU5RlRHMWpVemhxUTIxRFdFOVdaRnAyYjNsNWMwd3hUV015TVdaR1N6QnhNWEJJTjFkTVJVMWhPVUZoZDFoUVNrMXNja2RFZG1jeFQwRmlTMWgwVGtNd1oyaEhNVFIyZHpWcVFYcGllbGRzYjNGM2MyNWphR2xRUms1RU5XdDZhVE5mVW1OcFl6bHhabHBHVW5OM2FVZGpVa050UkhOS1VubHFYMjQ0TURoVlprTkdka1JuWVZaelZqbE5OVkpoTW1OWk1IbFlRa0pETTI5dFJrcEpOWEJrVEVFeVNURkZSRlp1TVdKa1R6RmFSWFF0VUZZM1ozYzBNV0ZRWkhkaE56ZDJjVEJOUmtGRGFUTnlTMHd0VEVkeldrTnhZbG8xUTBac05qSkZNV05ZTVU1S1ptZDFkM0JvTURKSE1FZFJTalpJTW5oQlNGZG5VM0JrVlV0WGNUTlFkWEpyV1ZsM1ZHa3dURkpYUjAxNU1rNXNTemR3VlV4UE1sRndlbTFHTjJ0V1JtZGhiVzVmYjBWT01GbGhWa294YlZnelZFMDJVRVZIVnpaRmRERlJJaXdpWlNJNklrRlJRVUlpZlEifQ.S4VDYLi4SviluK8IBdeE4SLTUFCk1OMQLRmp6zI5RK8ZTM3TbgXUWeOTUX6C5NtO7EaNx0wXmbqEGUkoiU9kY_dutKF1Kv2DG4MTqwNcU_skivo2Dt9g1atBRlF5Al4aEpIqThRKf0U2LWe80dvKwODki2TI1_kxsochleNLPETzrbqB9bMbiQ6JcKOsvkV8puIuGzuDdlhmmyH7wG1ySFy4bsPq8DoiBW_hRMJSxuW1go71v4Di2HxoqZuV9nJUO-vNvApiGYw3eSTzwTvV-TH7mdBlvxEXa3-42FreJQiQ7bsK48WqQ1jllGVoJYYE1FKEV-0rpEWYlIl3Shx7lg
@@ -337,9 +337,9 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImp3ayI6eyJrdHkiOiJSU0EiLCJuIjoieElDZGFobEla
 
 ## 1.8 Wallet Credentials API
 
-1.8.1 A Holder using an Issuer application can programtically save a credential file to a Wallet application using the Wallet application's ``Credentials API``.
+1.8.1 A Holder using an Issuer application can programmatically save a credential file to a Wallet application using the Wallet application's ``Credentials API``.
 
-1.8.2 A Wallet application must provide the ``Credential API`` URL to an Issuer application for credential data interchange.
+1.8.2 A Wallet application must provide the ``Credentials API`` URL to an Issuer application for credential data interchange.
 
 ## 1.9 Authorization Server
 
@@ -351,7 +351,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImp3ayI6eyJrdHkiOiJSU0EiLCJuIjoieElDZGFobEla
 
 ## 1.10 POST Request from Issuer Application
 
-1.19.1 The Issuer application will make a ``POST`` request to the ``Credentials API`` URL in the Wallet application to save a Holder's credentetial in a wallet application:
+1.19.1 The Issuer application will make a ``POST`` request to the ``Credentials API`` URL in the Wallet application to save a Holder's credential in a wallet application:
 
 ```bash
 https://<wallet-api-endpoint>/api/v1/credentials
@@ -361,7 +361,7 @@ https://<wallet-api-endpoint>/api/v1/credentials
 
 1.19.3 The ``POST`` request must inlcude the ``id token`` obtained from the authorization server in the Authorization header of the request as a bearer token.
 
-1.19.4 The Issuer application should place the credential in JWT compact format should in the body of the ``POST`` request with the content type of ``text/plain``.
+1.19.4 The Issuer application should place the credential in JWT compact format in the body of the ``POST`` request with the content type of ``text/plain``.
 
 ### Example POST Request from an Issuer Platform
 
@@ -377,6 +377,6 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImp3ayI6eyJrdHkiOiJSU0EiLCJuIjoieElDZGFobEla
 
 ## 1.11 Response from Wallet Application
 
-1.11.1 If the credential does not exist in the Wallet application, a new credential will be saved in the Wallet and a ``201`` response will be returned with the credential in jwt compact format in the body of the request with content type ``text plain``. The reposne will be sent to the Issuer application that made the ``POST`` request.
+1.11.1 If the credential does not exist in the Wallet application, a new credential will be saved in the Wallet and a ``201`` response will be returned with the credential in jwt compact format in the body of the request with content type ``text plain``. The response will be sent to the Issuer application that made the ``POST`` request.
 
-1.11.2 If the credential does exist, it will be updated and a ``200`` response will be returned in the response with the credential in the body. The reposne will be sent to the Issuer application that made the ``POST`` request.
+1.11.2 If the credential does exist, it will be updated and a ``200`` response will be returned with the credential in the body of the request. The response will be sent to the Issuer application that made the ``POST`` request.
