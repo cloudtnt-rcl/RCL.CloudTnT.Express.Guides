@@ -53,7 +53,7 @@ nav_order: 6
 
 1.4.8 Where an Issuer application creates a DID for a Holder,the Holder should be able to download the DID and the associated private key to add it to their DID store in a Wallet application.
 
-1.4.9 Where an Issuer application does not create a DID for a Holder, the Issuer must request the DID from the Holder to create the Holder's credential. The Issuer must verify that the Holder owns the DID by performing a DID verification using the Holder's private key.
+1.4.9 Where an Issuer application does not create a DID for a Holder, the Issuer application must request the DID from the Holder to create the Holder's credential. The Issuer application must verify that the Holder owns the DID by performing a DID verification using the Holder's private key.
 
 ### Sample did:jwk
 
@@ -101,9 +101,9 @@ did:jwk:eyJrdHkiOiJSU0EiLCJuIjoicHVYb3VRS1Vha2t2X2JUZWQ4dkNYLU9FTG1jUzhqQ21DWE9W
 
 1.5.1 In an Issuer or Wallet application, the DID private key for the Holder should not be stored in a database or other storage system. The private key should be controlled solely by the Holder. No external party should have access to the Holder's private key.
 
-1.5.2 When a Holder adds a DID to an Issuer or Wallet application, they must upload the DID as a text (.txt) file, as well as, use their private key to verify that they own the DID. The Wallet application should only use the private key to verify the DID and should not store the private key in any database.
+1.5.2 When a Holder adds a DID to an Issuer or Wallet application, they must upload the DID as a text (.txt) file, as well as, use their private key to verify that they own the DID. The application should only use the private key to verify the DID and should not store the private key in any database or other storage system.
 
-1.5.3 In the Issuer application, the DID private key for the Issuer can be stored in the application's database once the issuer has full and sole control of the Issuer application. No external party should have access to the Issuer's private key.
+1.5.3 In the Issuer application, the DID private key for the Issuer can be stored in the application's database or other storage system once the issuer has full and sole control of the Issuer application. No external party should have access to the Issuer's private key.
 
 1.5.4 Private key should be provided as ``.txt`` files that can be downloaded.
 
