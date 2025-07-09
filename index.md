@@ -16,6 +16,9 @@ Digital credentials are issued to holders who demonstrate their achievements. Th
 
 # Roles in the Digital Credentials Eco-System
 
+![credendiatl eco-system](./img/eco-system.png))
+
+
 ## Issuer
 
 An issuer is an organization or person that issues a digital credential to a holder who has demonstrated achievement in a particular area or skill.
